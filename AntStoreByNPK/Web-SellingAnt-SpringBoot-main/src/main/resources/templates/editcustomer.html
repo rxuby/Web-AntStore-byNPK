@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Include necessary CSS and JavaScript -->
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+    <h1>Edit Customer and Address Information</h1>
+    <form th:action="@{/editcustomer}" method="post">
+
+        <label>firstName: <input type="text" name="firstName" th:value="${customer.firstName}" /></label>
+        <label>lastName: <input type="text" name="lastName" th:value="${customer.lastName}" /></label>
+        <label>email: <input type="text" name="email" th:value="${customer.email}" /></label>
+        <label>phoneNumber: <input type="text" name="phoneNumber" th:value="${customer.phoneNumber}" /></label>
+        <label>address: <input type="text" name="detail" th:value="${address.detail}" /></label>
+        <button class = "button-link" type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>AntStore</title>
+	<link rel="stylesheet" th:href="@{/styles.css}" />
+	<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@100&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+	<div class = "content">
+		<div class="ant"></div>
+   		<script>
+        // Get the canvas element
+        // Function to create a new ant element
+		function createAnt() {
+			const ant = document.createElement('div');
+			ant.className = 'ant';
+			document.body.appendChild(ant);
+
+			// Randomize ant's initial position
+			const initialX = Math.random() * window.innerWidth;
+			const initialY = Math.random() * window.innerHeight;
+			ant.style.left = `${initialX}px`;
+			ant.style.top = `${initialY}px`;
+
+			// Randomize ant's speed
+			const speed = Math.random() * 2 + 1; // Adjust speed as needed
+
+			// Animate ant's movement
+			let currentX = initialX;
+			const maxX = window.innerWidth;
+			const animation = ant.animate([
+				{ transform: `translate(${initialX}px, ${initialY}px)` },
+				{ transform: `translate(${maxX}px, ${initialY}px)` }
+			], {
+				duration: speed * 1000, // Convert speed to milliseconds
+				iterations: Infinity
+			});
+
+			animation.onfinish = () => {
+				// Reset ant's position when the animation completes
+				ant.style.left = `${initialX}px`;
+			};
+		}
+
+		// Create multiple ants
+		const numberOfAnts = 10; // Adjust the number of ants as needed
+
+		for (let i = 0; i < numberOfAnts; i++) {
+			createAnt();
+		}
+
+    	</script>
+
+		<h1>ANT | STORE <br> By PNK</h1>
+		<div>		
+			<a th:if="${islogin}" th:href="@{/store}" class="button-link">Enter Store</a>
+			<a th:else th:href="@{/login}" class="button-link">Go Login</a>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,143 @@
+.body-center {
+    background-color: rgb(218, 67, 67);
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh
+}
+
+label{
+    color: white;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+
+body {
+    background-color: rgb(223, 67, 67);
+    width: 100vh;
+    height: 100vh;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+
+p {
+    color: white;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+}
+.button-link { 
+   background-color: #000000;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.button-link:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.content {
+    background-color: #000000;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.div-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* styles.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    color: #fff;
+}
+
+.button-buy {
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.button-buy:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.navbar {
+    background-color: #000;
+    font-family: 'Sofia Sans Extra Condensed', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #fff; /* Change color on hover */
+}
+
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.ant {
+    width: 10px;
+    height: 10px;
+    border: 100%;
+    background-color: #FF5733;
+    position: absolute;
+    animation: antRun 4s infinite;
+}
+
+@keyframes antRun {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

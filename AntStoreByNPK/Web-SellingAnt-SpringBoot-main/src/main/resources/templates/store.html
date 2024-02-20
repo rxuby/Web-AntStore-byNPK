@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AntStore - Ant List</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body >
+    <h1>Ant List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Ant ID</th>
+                <th>Species</th>
+                <th>Price</th>
+                <th>Stock Quantity</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ant : ${ants}">
+                <td th:text="${ant.antID}"></td>
+                <td th:text="${ant.species}"></td>
+                <td th:text="${ant.price}"></td>
+                <td th:text="${ant.stockQuantity}"></td>
+                <td th:text="${ant.description}"></td>
+                <td>
+                    <form th:action="@{/store/addToCart}" method="post">
+                        <input type="hidden" name="antId" th:value="${ant.antID}" />
+                        <button class="button-buy" type="submit">Request to Buy</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Cart Items</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Quantity</th>
+                <th>Subtotal Price</th>
+                <th>Cart ID</th>
+                <th>Ant ID</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cartItem : ${cartItems}">
+                <td th:text="${cartItem.cartItemID}"></td>
+                <td th:text="${cartItem.quantity}"></td>
+                <td th:text="${cartItem.subtotalPrice}"></td>
+                <td th:text="${cartItem.cart.cartID}"></td>
+                <td th:text="${cartItem.ant.antID}"></td>
+                <td>
+                    <form th:action="@{/store/removeFromCart}" method="post">
+                        <input type="hidden" name="cartItemID" th:value="${cartItem.cartItemID}"/>
+                        <button class="button-buy" type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class = 'div-center'>
+        <a th:href="@{/purchase}" class="button-link">purchase</a>
+    </div>
+</body>
+</html>
